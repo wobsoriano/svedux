@@ -75,6 +75,7 @@ Finally, import the store and use it in your Svelte components
 If you want to add `useSelector` like functionality, you can use Svelte's [derived](https://svelte.dev/tutorial/derived-stores) function from `svelte/store`:
 
 ```ts
+import { derived } from 'svelte/store'
 import { store } from '$lib/store'
 
 const count = derived(
