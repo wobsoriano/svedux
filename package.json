@@ -36,6 +36,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "peerDependencies": {
+    "@reduxjs/toolkit": ">=1.6.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
     "@reduxjs/toolkit": "^1.8.3",
@@ -45,7 +48,6 @@
     "eslint": "^8.11.0",
     "jsdom": "^19.0.0",
     "lint-staged": "^12.3.5",
-    "redux": "^4.2.0",
     "simple-git-hooks": "^2.7.0",
     "svelte": "^3.46.4",
     "tsup": "^5.12.1",
