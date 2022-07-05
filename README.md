@@ -50,13 +50,26 @@ Next, add slice reducers to the store and wrap it with svedux
 ```ts
 import toSvelteStore from 'svedux'
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '$lib/store/counterSlice'
+import counterReducer from '$lib/features/counter/Counter'
 
 export const store = toSvelteStore(configureStore({
   reducer: {
     counter: counterReducer,
   },
 }))
+```
+
+Finally, import the store and use it in your Svelte components
+
+```svelte
+<script lang="ts">
+  import { increment } from '$lib/features/counter/Counter'
+  import { store } from '$lib/store'
+</script>
+
+<button on:click={() => store.dispatch(increment())}>
+  Clicks: {$store.counter.value}
+</button>
 ```
 
 ## License
