@@ -1,0 +1,71 @@
+{
+  "name": "sveltio",
+  "version": "1.0.8",
+  "description": "Proxy-state for Svelte using Valtio.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/sveltio.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./utils": {
+      "require": "./dist/utils.js",
+      "import": "./dist/utils.mjs",
+      "types": "./dist/utils.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "release": "bumpp --commit --push --tag && npm publish",
+    "prepublishOnly": "pnpm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.18.8",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.39",
+    "@testing-library/svelte": "^3.1.0",
+    "bumpp": "^7.1.1",
+    "eslint": "^8.11.0",
+    "jsdom": "^19.0.0",
+    "lint-staged": "^12.3.5",
+    "redux": "^4.2.0",
+    "simple-git-hooks": "^2.7.0",
+    "svelte": "^3.46.4",
+    "tsup": "^5.12.1",
+    "typescript": "^4.3.5",
+    "vitest": "^0.9.3"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.{js,ts}": [
+      "eslint --fix"
+    ]
+  },
+  "homepage": "https://github.com/wobsoriano/sveltio#readme",
+  "eslintConfig": {
+    "extends": "@antfu"
+  },
+  "eslintIgnore": [
+    "dist",
+    "node_modules"
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  }
+}
