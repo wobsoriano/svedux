@@ -72,7 +72,7 @@ Finally, import the store and use it in your Svelte components
 </button>
 ```
 
-If you want `useSelector` like functionality, you can use Svelte's [derived](https://svelte.dev/tutorial/derived-stores) function from `svelte/store`:
+If you want [`useSelector`](https://react-redux.js.org/api/hooks#useselector) like functionality, you can use Svelte's [`derived`](https://svelte.dev/tutorial/derived-stores) function from `svelte/store`:
 
 ```ts
 import { derived } from 'svelte/store'
