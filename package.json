@@ -1,7 +1,7 @@
 {
   "name": "svedux",
   "version": "0.0.0",
-  "description": "Redux stores in Svelte",
+  "description": "An easy way to integrate Redux with Svelte.",
   "license": "MIT",
   "repository": {
     "type": "git",
