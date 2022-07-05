@@ -50,10 +50,11 @@ Next, add slice reducers to the store and wrap it with svedux
 ```ts
 import toSvelteStore from 'svedux'
 import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from '$lib/store/counterSlice'
 
 export const store = toSvelteStore(configureStore({
   reducer: {
-    counter: counterSlice.reducer,
+    counter: counterReducer,
   },
 }))
 ```
