@@ -32,7 +32,8 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "@reduxjs/toolkit": ">=1.6.0"
+    "@reduxjs/toolkit": ">=1.6.0",
+    "svelte": "*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
