@@ -72,6 +72,17 @@ Finally, import the store and use it in your Svelte components
 </button>
 ```
 
+If you want to add `useSelector` like functionality, you can use the [derived](https://svelte.dev/tutorial/derived-stores) function:
+
+```ts
+import { store } from '$lib/store'
+
+const count = derived(
+  store,
+  $store => store.counter.value,
+)
+```
+
 ## License
 
 MIT
