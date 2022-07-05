@@ -1,11 +1,11 @@
 {
-  "name": "sveltio",
-  "version": "1.0.8",
-  "description": "Proxy-state for Svelte using Valtio.",
+  "name": "svedux",
+  "version": "0.0.0",
+  "description": "Redux stores in Svelte",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/sveltio.git"
+    "url": "git+https://github.com/wobsoriano/svedux.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,16 +15,10 @@
       "require": "./dist/index.js",
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
-    },
-    "./utils": {
-      "require": "./dist/utils.js",
-      "import": "./dist/utils.mjs",
-      "types": "./dist/utils.d.ts"
     }
   },
   "files": [
-    "dist",
-    "*.d.ts"
+    "dist"
   ],
   "sideEffects": false,
   "scripts": {
@@ -60,7 +54,7 @@
       "eslint --fix"
     ]
   },
-  "homepage": "https://github.com/wobsoriano/sveltio#readme",
+  "homepage": "https://github.com/wobsoriano/svedux#readme",
   "eslintConfig": {
     "extends": "@antfu"
   },
