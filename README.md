@@ -61,8 +61,8 @@ export const store = toSvelteStore(configureStore({
 
 Finally, import the store and use it in your Svelte components
 
-```svelte
-<script lang="ts">
+```html
+<script>
   import { increment } from '$lib/features/counter/Counter'
   import { store } from '$lib/store'
 </script>
