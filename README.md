@@ -72,16 +72,12 @@ Finally, import the store and use it in your Svelte components
 </button>
 ```
 
-If you want [`useSelector`](https://react-redux.js.org/api/hooks#useselector) like functionality, you can use Svelte's [`derived`](https://svelte.dev/tutorial/derived-stores) function from `svelte/store`:
+If you want [`useSelector`](https://react-redux.js.org/api/hooks#useselector) like functionality, you can use a reactive statement:
 
 ```ts
-import { derived } from 'svelte/store'
 import { store } from '$lib/store'
 
-const count = derived(
-  store,
-  $store => store.counter.value,
-)
+$: count = $store.counter.value
 ```
 
 ## License
