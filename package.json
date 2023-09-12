@@ -36,19 +36,19 @@
     "svelte": "*"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.8",
-    "@reduxjs/toolkit": "^1.8.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.39",
-    "@testing-library/svelte": "^3.1.0",
-    "bumpp": "^7.1.1",
-    "eslint": "^8.11.0",
-    "jsdom": "^19.0.0",
-    "lint-staged": "^12.3.5",
-    "simple-git-hooks": "^2.7.0",
-    "svelte": "^3.46.4",
-    "tsup": "^5.12.1",
-    "typescript": "^4.3.5",
-    "vitest": "^0.9.3"
+    "@antfu/eslint-config": "^0.41.2",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@sveltejs/vite-plugin-svelte": "^2.4.5",
+    "@testing-library/svelte": "^4.0.3",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.49.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^14.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "svelte": "^4.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
   },
   "lint-staged": {
     "{src,test}/**/*.{js,ts}": [
