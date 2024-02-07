@@ -47,9 +47,6 @@ devDependencies:
   publint:
     specifier: ^0.2.7
     version: 0.2.7
-  redux:
-    specifier: ^5.0.1
-    version: 5.0.1
   svelte:
     specifier: ^5.0.0-next.50
     version: 5.0.0-next.50

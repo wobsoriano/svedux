@@ -1,4 +1,4 @@
-import type { UnknownAction, Action as BasicAction, Store, Dispatch } from 'redux';
+import type { UnknownAction, Action as BasicAction, Store, Dispatch } from '@reduxjs/toolkit';
 import { getContext } from 'svelte';
 
 export const contextStoreKey = Symbol('redux-store')
