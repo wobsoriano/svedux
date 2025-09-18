@@ -14,7 +14,7 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run",
 		"release": "bumpp && npm publish",
-		"prepublishOnly": "npm run package"
+		"prepublishOnly": "npm run prepack"
 	},
 	"exports": {
 		".": {
