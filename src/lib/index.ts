@@ -1,9 +1,3 @@
-export {
-  useStore,
-  useSelector,
-  useDispatch
-} from './hooks.js';
+export { useStore, useSelector, useDispatch } from './hooks.js';
 
-export {
-  default as Provider
-} from './Provider.svelte'
+export { default as Provider } from './Provider.svelte';

@@ -1,22 +1,22 @@
 <script lang="ts">
-import { onDestroy, setContext } from 'svelte'
-import type { EnhancedStore } from '@reduxjs/toolkit'
-import { contextStoreKey, contextStoreStateKey } from './hooks.js'
+	import { setContext, untrack, type Snippet } from 'svelte';
+	import type { EnhancedStore } from '@reduxjs/toolkit';
+	import { contextStoreKey, contextStoreStateKey } from './hooks.js';
 
-let { store, children } = $props<{ store: EnhancedStore; children: any }>();
+	const { store, children }: { store: EnhancedStore; children: Snippet } = $props();
 
-let state = $state(store.getState())
+	let state = $state(store.getState());
 
-const unsubscribe = store.subscribe(() => {
-  state = store.getState()
-})
+	$effect(() => {
+		const unsubscribe = store.subscribe(() => {
+			state = untrack(() => store.getState());
+		});
 
-onDestroy(() => {
-  unsubscribe()
-})
+		return unsubscribe;
+	});
 
-setContext(contextStoreKey, store)
-setContext(contextStoreStateKey, () => state)
+	setContext(contextStoreKey, store);
+	setContext(contextStoreStateKey, () => state);
 </script>
 
 {@render children()}

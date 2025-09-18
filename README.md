@@ -15,43 +15,46 @@ npm install @reduxjs/toolkit svedux
 1. Create a store
 
 ```ts
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface CounterState {
-  value: number
+	value: number;
 }
 
 const initialState: CounterState = {
-  value: 0,
-}
+	value: 0
+};
 
 export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-  },
-})
+	name: 'counter',
+	initialState,
+	reducers: {
+		increment: (state) => {
+			state.value += 1;
+		},
+		decrement: (state) => {
+			state.value -= 1;
+		}
+	}
+});
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement } = counterSlice.actions
+export const { increment, decrement } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;
 ```
 
 2. Wrap your main App with the `<Provider>` component
 
 ```svelte
-import { Provider } from 'svedux'
+<script lang="ts">
+	import { Provider } from 'svedux';
+	import { store } from '../store.js';
+</script>
 
-<Provider>
-  <App />
+<Provider {store}>
+	<App />
 </Provider>
 ```
 
@@ -59,16 +62,16 @@ import { Provider } from 'svedux'
 
 ```svelte
 <script lang="ts">
-import { useDispatch, useSelector } from 'svedux'
-import type { RootState } from '../store.js';
-import { increment } from '../store.js';
+	import { useDispatch, useSelector } from 'svedux';
+	import type { RootState } from '../store.js';
+	import { increment } from '../store.js';
 
-const count = useSelector((state: RootState) => state.counter.value)
-const dispatch = useDispatch()
+	const count = useSelector((state: RootState) => state.counter.value);
+	const dispatch = useDispatch();
 </script>
 
 <button onclick={() => dispatch(increment())}>
-  Clicks: { count.value }
+	Clicks: {count.current}
 </button>
 ```
 
